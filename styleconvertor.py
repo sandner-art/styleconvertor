@@ -54,8 +54,8 @@ def json_to_csv(json_file, csv_file):
         # Read the JSON data
         data = json.load(file)
 
-    # Open the CSV file
-    with open(csv_file, 'w', newline='') as file:
+    # Open the CSV file in text mode with the utf-8-sig encoding
+    with open(csv_file, 'w', newline='', encoding='utf-8-sig') as file:
         # Write the CSV data
         writer = csv.DictWriter(file, fieldnames=data[0].keys())
         writer.writeheader()
